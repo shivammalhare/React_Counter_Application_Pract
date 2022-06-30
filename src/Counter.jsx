@@ -36,8 +36,18 @@ class Counter extends Component {
         <h4> Counter Number {this.props.counter.id}</h4>
         <span style = {this.styles} className={this.getBadgeClasses()}>{this.formatCount()}</span>
         {/* <img src= {this.state.imgurl} alt="" srcset="" /> */}
-        <button onClick={()=> this.props.onIncrement(this.props.counter)} className="btn btn-secondary btn-sm">Increment</button>
-        <button onClick={()=> this.props.onDelete(this.props.counter.id)} className="btn btn-danger btn-sm m-2">Delete</button>
+        <table>
+          <tr>
+       <td><button onClick={()=> this.props.onIncrement(this.props.counter)} className="btn btn-secondary btn-sm">+</button></td> 
+        <td> <button onClick={()=> this.props.onDecrement(this.props.counter)} className="btn btn-secondary btn-sm m-2"
+         disabled = {this.props.counter.value === 0 ? 'disabled' : ''}>-
+        </button></td>  
+
+        <td>
+           <button onClick={()=> this.props.onDelete(this.props.counter.id)} className="btn btn-danger btn-sm m-2">X</button>
+        </td>
+          </tr>
+        </table>
 
         <ul>
         {this.state.tags.length === 0 && ''}

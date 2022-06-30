@@ -4,9 +4,12 @@ import MovieList from './components/MovieList';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.css';
 import './style.css';
-import Counters from './counters';
 
-class App extends Component {
+import App from './App';
+import ReactDOM from 'react-dom';
+
+
+class Index extends Component {
   constructor() {
     super();
     this.state = {
@@ -17,11 +20,11 @@ class App extends Component {
   render() {
     return (
       <main className="container">
-        <Counters />
+        <App />
       </main>
     );
   }
 }
 
-render(<App />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById("root"));
 // render(<Counter />, document.getElementById('root'));
